@@ -25,13 +25,62 @@ const dataBase = [
         price: 40,
         url: 'melon.png'
 
+    },
+
+    {
+
+        id: 4,
+        name: 'bread',
+        price: 100,
+        url: 'bread.png'
+
+    },
+
+    {
+
+        id: 5,
+        name: 'orange',
+        price: 5,
+        url: 'orange.png'
+
+    },
+
+    {
+
+        id: 6,
+        name: 'meat',
+        price: 254,
+        url: 'meat.png'
+
     }
 
 ];
 
 const available = document.querySelector('main .available');
 const preview = document.querySelector('main .toBuy');
+preview.classList.add('hidden');
 let buying = [];
+
+const totalRender = () => {
+
+    const totalParagraph = document.querySelector('.totalPrice');
+    const search = document.querySelectorAll('.price').length;
+    const index = document.querySelectorAll('.price')[search - 1];
+    const total = Number(index.price);
+
+    if (total === 0) {
+
+        totalParagraph.remove();
+        index.remove();
+        preview.classList.add('hidden');
+
+    }else{
+
+        preview.classList.remove('hidden');
+
+    };
+
+};
 
 const deleteButtonFunction = e => {
 
@@ -55,17 +104,7 @@ const deleteButtonFunction = e => {
         buttonParent.remove();
         render(buying);
 
-        const totalParagraph = document.querySelector('.totalPrice');
-        const search = document.querySelectorAll('.price').length;
-        const index = document.querySelectorAll('.price')[search - 1];
-        const total = Number(index.price);
-    
-        if (total === 0) {
-    
-            totalParagraph.remove();
-            index.remove();
-    
-        };
+        totalRender();
 
     }, 1000);
 
@@ -148,6 +187,7 @@ const addButtonFunction = e => {
     buying.push(parseInt(button.id));
 
     render(buying);
+    totalRender();
 
 };
 
@@ -156,11 +196,15 @@ dataBase.forEach(one => {
     const fragment = document.createDocumentFragment();
     const item = document.createElement('article');
 
+    const div = document.createElement('div');
+    div.className = 'imageContainer';
+    item.appendChild(div);
+
     const img = document.createElement('img');
     img.src = ('/img/').concat(one.url);
     img.alt = one.name;
     img.className = 'productImage';
-    item.appendChild(img);
+    div.appendChild(img);
 
     const paragraph = document.createElement('p');
     paragraph.innerText = one.name;

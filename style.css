@@ -35,11 +35,19 @@ header:hover {
 
 }
 
+div{
+
+    display: flex;
+    padding-left: 1rem;
+    height: 5rem;
+    width: 7rem;
+
+}
+
 .productImage {
 
     border: 0px;
-    height: 5rem;
-    min-width: 5rem;
+    max-height: 5rem;
     max-width: 7rem;
 
 }
@@ -138,7 +146,7 @@ header:hover {
 .deleteAnimate {
 
     transition-timing-function: ease;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     opacity: 0;
 
 }
@@ -166,6 +174,12 @@ footer:hover {
 .footerTitle {
 
     text-transform: uppercase;
+
+}
+
+.hidden{
+
+    display: none !important;
 
 }
 
@@ -380,7 +394,7 @@ footer:hover {
         border-radius: 0.5rem 0rem 0rem 0.5rem;
         height: 5rem;
         min-width: 20rem;
-        max-width: 22rem;
+        max-width: 23rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -413,7 +427,7 @@ footer:hover {
         border-radius: 0.5rem 0rem 0rem 0.5rem;
         height: 5rem;
         min-width: 20rem;
-        max-width: 22rem;
+        max-width: 23rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -472,7 +486,7 @@ footer:hover {
         border-radius: 0.5rem 0rem 0rem 0.5rem;
         height: 5rem;
         min-width: 20rem;
-        max-width: 22rem;
+        max-width: 28rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -505,7 +519,99 @@ footer:hover {
         border-radius: 0.5rem 0rem 0rem 0.5rem;
         height: 5rem;
         min-width: 20rem;
-        max-width: 22rem;
+        max-width: 28rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+    
+    }
+
+    .deleteButton {
+
+        font-size: 2rem !important;
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 3rem;
+    
+    }
+
+    .totalPrice {
+
+        background-color: white !important;
+
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    body{
+
+        background-color: white;
+
+    }
+
+    main {
+
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: unset;
+
+    }
+
+    .available {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .available article {
+
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        height: 5rem;
+        min-width: 20rem;
+        max-width: 35rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+    
+    }
+
+    .addButton {
+
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 2rem;
+    
+    }
+
+    .toBuy {
+
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .toBuy article {
+    
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        height: 5rem;
+        min-width: 20rem;
+        max-width: 35rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
