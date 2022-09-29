@@ -1,0 +1,535 @@
+body {
+
+    margin: 0px;
+
+}
+
+header {
+
+    height: 4rem;
+    background-color: rgb(193, 193, 243);
+    display: flex;
+    justify-content: center;
+
+}
+
+header:hover {
+
+    background-color: rgb(159, 159, 235);
+    color: white;
+
+}
+
+
+.headerTitle {
+
+    text-transform: uppercase;
+    align-self: center;
+
+}
+
+.available article:hover {
+
+    color: white;
+    background-color: rgb(95, 128, 155);
+
+}
+
+.productImage {
+
+    border: 0px;
+    height: 5rem;
+    min-width: 5rem;
+    max-width: 7rem;
+
+}
+
+.available article p {
+
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
+}
+
+.price {
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 1rem 1rem;
+    padding: 0.5px 0.5rem;
+    box-shadow: 0rem 0rem 0.5rem black;
+    background-color: lightgray;
+    color: rgb(59, 161, 59);
+
+}
+
+.price:hover {
+
+    box-shadow: 0rem 0rem 0rem;
+    background-color: gray;
+    color: lightgreen;
+
+}
+
+.addButton:hover {
+
+    color: white;
+    background-color: blue;
+
+}
+
+.addButton:active {
+
+    color: white;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.toBuy article:hover {
+
+    color: white;
+    background-color: rgb(95, 128, 155);
+
+}
+
+.deleteButton:hover {
+
+    color: white;
+    background-color: rgb(255, 0, 0);
+}
+
+.deleteButton:active {
+
+    color: white;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.toBuy article p {
+
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
+}
+
+.extra {
+
+    width: 0.5rem;
+
+}
+
+.totalPrice {
+
+    height: 7rem !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    background-color: white !important;
+
+}
+
+.totalPrice:hover {
+
+    color: black !important;
+
+}
+
+.deleteAnimate {
+
+    transition-timing-function: ease;
+    transition-duration: 1s;
+    opacity: 0;
+
+}
+
+footer {
+
+    margin-top: 1rem;
+    height: 5rem;
+    min-width: 300px;
+    background-color: rgb(193, 193, 243);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+footer:hover {
+
+    background-color: rgb(159, 159, 235);
+    color: white;
+
+}
+
+
+.footerTitle {
+
+    text-transform: uppercase;
+
+}
+
+@media (max-width: 576px) {
+
+    body{
+
+        background-color: rgb(193, 193, 243);
+
+    }
+
+    header{
+
+        min-width: 300px;
+
+    }
+
+    main {
+
+        display: block;
+
+    }
+
+    .available {
+
+        display: block;
+
+    }
+
+    .available article {
+
+        height: 5rem;
+        min-width: 300px;
+        max-width: 576px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+
+    }
+
+    .addButton {
+
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 5rem;
+    
+    }
+
+    .toBuy {
+
+        margin-top: 2rem;
+        display: block;
+    
+    }
+    
+    .toBuy article {
+    
+        height: 5rem;
+        min-width: 300px;
+        max-width: 576px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+    
+    }
+
+    .deleteButton {
+
+        font-size: 2rem !important;
+        border-radius: 0rem 0rem 0rem 0rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 5rem;
+    
+    }
+    
+
+    .totalPrice {
+
+        background-color: lightgreen !important;
+
+    }
+
+}
+
+@media (min-width: 577px) {
+
+    body{
+
+        background-color: rgb(193, 193, 243);
+
+    }
+
+    main {
+
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .available {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .available article {
+
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        height: 5rem;
+        width: 576px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+
+    }
+
+    .addButton {
+
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 5rem;
+    
+    }
+
+    .toBuy {
+
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .toBuy article {
+    
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        height: 5rem;
+        width: 576px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+    
+    }
+
+    .deleteButton {
+
+        font-size: 2rem !important;
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 5rem;
+    
+    }
+
+    .totalPrice {
+
+        background-color: lightgreen !important;
+
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    body{
+
+        background-color: white;
+
+    }
+
+
+    main {
+
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: unset;
+
+    }
+
+    .available {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .available article {
+
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        height: 5rem;
+        min-width: 20rem;
+        max-width: 22rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+
+    }
+
+    .addButton {
+
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 2rem;
+    
+    }
+
+    .toBuy {
+
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .toBuy article {
+    
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        height: 5rem;
+        min-width: 20rem;
+        max-width: 22rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+    
+    }
+
+    .deleteButton {
+
+        font-size: 2rem !important;
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 3rem;
+    
+    }
+
+    .totalPrice {
+
+        background-color: white !important;
+
+    }
+
+}
+
+@media (min-width: 981px) {
+
+    body{
+
+        background-color: white;
+
+    }
+
+    main {
+
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: unset;
+
+    }
+
+    .available {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .available article {
+
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        height: 5rem;
+        min-width: 20rem;
+        max-width: 22rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+    
+    }
+
+    .addButton {
+
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 2rem;
+    
+    }
+
+    .toBuy {
+
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .toBuy article {
+    
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        height: 5rem;
+        min-width: 20rem;
+        max-width: 22rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(177, 202, 223);
+    
+    }
+
+    .deleteButton {
+
+        font-size: 2rem !important;
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+        font-size: 1.5rem;
+        border: 0px;
+        background-color: rgb(177, 202, 223);
+        height: 5rem;
+        width: 3rem;
+    
+    }
+
+    .totalPrice {
+
+        background-color: white !important;
+
+    }
+
+}
