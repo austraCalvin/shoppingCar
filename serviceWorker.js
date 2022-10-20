@@ -19,7 +19,7 @@ function serviceWorkerInstall(e) {
 
     if (navigator.onLine) {
 
-        e.waitUntil((async function(){
+        e.waitUntil((async function () {
 
             const cache = (await self.caches.open(shoppinCarCacheName));
             return cache.addAll(["index.html", "style.css", "script.js", "img/apple.png", "img/bread.png", "img/meat.png", "img/melon.png", "img/onion.png", "img/orange.png"]);
@@ -35,7 +35,7 @@ function serviceWorkerActivate(e) {
     console.log(e);
 
 };
-async function serviceWorkerFetch(e) {
+function serviceWorkerFetch(e) {
 
     console.log("response from serviceWorkerFetch event!");
     console.log(e);
@@ -44,9 +44,9 @@ async function serviceWorkerFetch(e) {
 
     if (!navigator.onLine) {
 
-        const cache = (await self.caches.open(shoppinCarCacheName));
         const response = (async function () {
 
+            const cache = (await self.caches.open(shoppinCarCacheName));
             const resp_1 = await cache.match(e.request);
 
             if (resp_1) {
