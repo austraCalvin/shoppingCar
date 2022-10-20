@@ -1,6 +1,6 @@
-const dataBase = [
+const dataBase = {
 
-    {
+    1: {
 
         id: 1,
         name: 'apple',
@@ -9,7 +9,7 @@ const dataBase = [
 
     },
 
-    {
+    2: {
 
         id: 2,
         name: 'onion',
@@ -18,7 +18,7 @@ const dataBase = [
 
     },
 
-    {
+    3: {
 
         id: 3,
         name: 'melon',
@@ -27,7 +27,7 @@ const dataBase = [
 
     },
 
-    {
+    4: {
 
         id: 4,
         name: 'bread',
@@ -36,7 +36,7 @@ const dataBase = [
 
     },
 
-    {
+    5: {
 
         id: 5,
         name: 'orange',
@@ -45,7 +45,7 @@ const dataBase = [
 
     },
 
-    {
+    6: {
 
         id: 6,
         name: 'meat',
@@ -54,12 +54,12 @@ const dataBase = [
 
     }
 
-];
+};
 
 const available = document.querySelector('main .available');
 const preview = document.querySelector('main .toBuy');
 preview.classList.add('hidden');
-let buying = [];
+let buying = {};
 
 const totalRender = () => {
 
@@ -74,7 +74,7 @@ const totalRender = () => {
         index.remove();
         preview.classList.add('hidden');
 
-    }else{
+    } else {
 
         preview.classList.remove('hidden');
 
@@ -191,41 +191,48 @@ const addButtonFunction = e => {
 
 };
 
-dataBase.forEach(one => {
+for (let i = 0; i < 10000; i++) {
 
-    const fragment = document.createDocumentFragment();
-    const item = document.createElement('article');
+    if (!dataBase[i]) {
 
-    const div = document.createElement('div');
-    div.className = 'imageContainer';
-    item.appendChild(div);
+        continue;
 
-    const img = document.createElement('img');
-    img.src = ('/img/').concat(one.url);
-    img.alt = one.name;
-    img.className = 'productImage';
-    div.appendChild(img);
+    } else {
 
-    const paragraph = document.createElement('p');
-    paragraph.innerText = one.name;
-    item.appendChild(paragraph);
+        const currentItem = dataBase[i];
+        const fragment = document.createDocumentFragment();
+        const item = document.createElement('article');
 
-    const price = document.createElement('span');
-    price.innerText = `${one.price}$`;
-    price.className = 'price';
-    item.appendChild(price);
+        const div = document.createElement('div');
+        div.className = 'imageContainer';
+        item.appendChild(div);
 
-    const addButton = document.createElement('button');
-    addButton.id = `${one.id}`;
-    addButton.type = 'button';
-    addButton.className = 'addButton';
-    addButton.innerText = '+';
+        const img = document.createElement('img');
+        img.src = ('/img/').concat(currentItem.url);
+        img.alt = currentItem.name;
+        img.className = 'productImage';
+        div.appendChild(img);
 
-    addButton.addEventListener('click', addButtonFunction);
+        const paragraph = document.createElement('p');
+        paragraph.innerText = currentItem.name;
+        item.appendChild(paragraph);
 
-    item.appendChild(addButton);
+        const price = document.createElement('span');
+        price.innerText = `${currentItem.price}$`;
+        price.className = 'price';
+        item.appendChild(price);
 
-    fragment.appendChild(item);
-    available.appendChild(fragment);
+        const addButton = document.createElement('button');
+        addButton.id = `${currentItem.id}`;
+        addButton.type = 'button';
+        addButton.className = 'addButton';
+        addButton.innerText = '+';
 
-});
+        addButton.addEventListener('click', addButtonFunction);
+
+        item.appendChild(addButton);
+
+        fragment.appendChild(item);
+        available.appendChild(fragment);
+    }
+};
