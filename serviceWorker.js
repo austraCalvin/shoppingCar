@@ -12,17 +12,19 @@ navigator &&
         console.log(response);
 
     });
-async function serviceWorkerInstall(e) {
+function serviceWorkerInstall(e) {
 
     console.log("response from serviceWorkerInstall event!");
     console.log(e);
 
     if (navigator.onLine) {
 
-        const cache = (await self.caches.open(shoppinCarCacheName));
-        const addCache = cache.addAll(["index.html", "style.css", "script.js", "img/apple.png", "img/bread.png", "img/meat.png", "img/melon.png", "img/onion.png", "img/orange.png"]);
+        e.waitUntil((async function(){
 
-        e.waitUntil(addCache);
+            const cache = (await self.caches.open(shoppinCarCacheName));
+            return cache.addAll(["index.html", "style.css", "script.js", "img/apple.png", "img/bread.png", "img/meat.png", "img/melon.png", "img/onion.png", "img/orange.png"]);
+
+        })());
 
     };
 
@@ -66,7 +68,7 @@ async function serviceWorkerFetch(e) {
         e.respondWith(response);
 
     };
-    
+
 };
 self.addEventListener("install", serviceWorkerInstall);
 self.addEventListener("activate", serviceWorkerActivate);
